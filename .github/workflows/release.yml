@@ -23,7 +23,7 @@ jobs:
       id-token: write
       attestations: write
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # No QEMU step on purpose: the Dockerfile builds on $BUILDPLATFORM and its
       # runtime stage has no RUN, so nothing executes as arm64 during the build.
