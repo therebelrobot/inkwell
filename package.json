@@ -1,6 +1,6 @@
 {
   "name": "inkwell",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Self-hosted ink narrative editor for desktop and iPad: multi-file projects, live compile, play preview, knot graph.",
   "scripts": {
     "dev": "node --run dev:server & node --run dev:client",
