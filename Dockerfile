@@ -4,7 +4,7 @@
 # JavaScript plus static assets, identical for amd64 and arm64. So the arm64
 # image needs no QEMU-emulated npm install or Vite build, which is what makes
 # multi-arch builds slow.
-FROM --platform=$BUILDPLATFORM node:24-alpine AS build
+FROM --platform=$BUILDPLATFORM node:26-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
@@ -16,7 +16,7 @@ RUN npm run build && mkdir -p /app/data
 # Runtime: the esbuild bundle has hono and inkjs inlined, so no node_modules.
 # This stage deliberately has no RUN steps: nothing executes as the target
 # architecture during the build, so CI needs no QEMU at all.
-FROM node:24-alpine
+FROM node:26-alpine
 WORKDIR /app
 ENV NODE_ENV=production \
     PORT=3000 \
