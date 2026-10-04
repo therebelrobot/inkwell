@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#1d2b2a"/>
+  <!-- warp threads -->
+  <g stroke="#2f4a45" stroke-width="10">
+    <line x1="150" y1="96" x2="150" y2="416"/>
+    <line x1="256" y1="96" x2="256" y2="416"/>
+    <line x1="362" y1="96" x2="362" y2="416"/>
+  </g>
+  <!-- weft: diverts between knots -->
+  <g fill="none" stroke="#5cc2ad" stroke-width="14" stroke-linecap="round">
+    <path d="M150 256 C 200 256, 206 176, 256 176"/>
+    <path d="M150 256 C 200 256, 206 336, 256 336"/>
+    <path d="M256 176 C 306 176, 312 256, 362 256"/>
+    <path d="M256 336 C 306 336, 312 256, 362 256"/>
+  </g>
+  <circle cx="150" cy="256" r="30" fill="#5cc2ad"/>
+  <circle cx="256" cy="176" r="26" fill="#22322f" stroke="#5cc2ad" stroke-width="10"/>
+  <circle cx="256" cy="336" r="26" fill="#22322f" stroke="#5cc2ad" stroke-width="10"/>
+  <circle cx="362" cy="256" r="30" fill="#f0b54a"/>
+</svg>

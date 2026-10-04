@@ -1,0 +1,16 @@
+services:
+  inkwell:
+    image: ghcr.io/therebelrobot/inkwell:0.1
+    container_name: inkwell
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Leave empty only if your reverse proxy already puts auth in front of this.
+      INKWELL_PASSWORD: ${INKWELL_PASSWORD:-}
+      # Optional: set so changing the password doesn't decide session validity on its own.
+      # INKWELL_SESSION_SECRET: ${INKWELL_SESSION_SECRET:-}
+    volumes:
+      # Projects live here as plain .ink folders. The container runs as uid 1000 (node);
+      # if the host folder belongs to someone else: sudo chown -R 1000:1000 ./inkwell-data
+      - ./inkwell-data:/app/data
